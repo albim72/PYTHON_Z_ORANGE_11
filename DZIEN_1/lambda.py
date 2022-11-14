@@ -24,4 +24,19 @@ print(ob(7)(6,8))
 
 num = [67,3,4,-9,0,14,7,99,56,79,1,1990]
 
+h = filter(lambda x:x%2 == 0,num)
+print(type(h))
+nparz = list(filter(lambda x:x%2 == 0,num))
+print(nparz)
+
+def pp(x):
+    return x%2==0
+
+nparz = list(filter(pp,num))
+print(nparz)
+
+#stwórz listę cube i przekaż do niej wsyztskie wartości z listy num podniesione do potęgi 3!!
+
+cube = list(map(lambda x:x**3,num))
+print(cube)
 
