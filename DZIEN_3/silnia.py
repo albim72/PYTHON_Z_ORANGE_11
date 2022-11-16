@@ -30,3 +30,9 @@ try:
     print(f'silnia factorial: {math.factorial(n)}')
 except ValueError as ve:
     print(ve)
+    raise
+except Exception as r:
+    print(r)
+
+#print(f'silnia z n={n} wynosi: {silnia(n)}')
+print("Program nie został przerwany")
