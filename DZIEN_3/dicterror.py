@@ -19,7 +19,7 @@ class KeyValueConstructError(Exception):
                f"klucz: {self.key} jest w typie: {type(self.key)}, " \
                f"wartość: {self.value} jest w typie: {type(self.value)}."
 
-class CustomInFloatDict(dict):
+class CustomIntFloatDict(dict):
     empty_dict ={}
 
     def __init__(self,key=None, value=None):
@@ -33,12 +33,24 @@ class CustomInFloatDict(dict):
                 if not isinstance(val,(int,float)):
                     raise IntFloatValueError(val)
                 dict.__setitem__(self,k,val)
-                
+
     def get_dict(self):
         return self.empty_dict
-    
+
     def __setitem__(self, key, value):
         if not isinstance(value,(int,float)):
             raise IntFloatValueError(value)
         return dict.__setitem__(self,key,value)
-            
+
+
+test_1 = CustomIntFloatDict()
+print(test_1)
+
+# test_2 = CustomIntFloatDict({'a','b'},[3,7])
+# print(test_2)
+
+# test_3 = CustomIntFloatDict(('x','y','z'),(10,"twenty",30))
+# print(test_3)
+
+test_4 = CustomIntFloatDict(('x','y','z'),(10,20,30))
+print(test_4)
