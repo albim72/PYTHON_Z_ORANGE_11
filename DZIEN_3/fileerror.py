@@ -4,7 +4,8 @@ try:
     f = open("waznedane.txt","r",encoding="utf-8")
     s = f.readline()
     i = int(s.strip())
-    raise Exception(d=i/0)
+    raise Exception(d=i/2)
+    #d=i/0
 except OSError as err:
     print(f"błąd systemowy: {err}")
 except ValueError:
@@ -19,3 +20,8 @@ else:
     print("plik odczytany")
 finally:
     print("koniec analizy błędu...")
+    f.close()
+
+print(f.closed)
+
+
